@@ -98,26 +98,29 @@ body {
 /* Only one .main-content rule, margin-left matches sidebar width */
 .main-content {
     flex: 1;
-    margin: 24px 24px 24px 300px; /* 270px sidebar + 30px gap */
+    margin: 2vw 2vw 2vw 19vw; /* Responsive left margin */
     background: #fff;
-    border-radius: 18px;
+    border-radius: 1.2em;
     box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 40px 48px;
+    padding: 2.5vw 3vw;
     overflow-y: auto;
     min-width: 0;
+    max-width: 90vw;
 }
 .sidebar {
-    width: 270px;
+    width: 17vw;
+    min-width: 200px;
+    max-width: 320px;
     background: #0a174e;
     color: #fff;
-    border-radius: 0 18px 18px 0;
+    border-radius: 0 1.2em 1.2em 0;
     margin: 0;
     box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 32px 18px 18px 18px;
+    padding: 2vw 1.2vw 1.2vw 1.2vw;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 18px;
+    gap: 1.2vw;
     min-height: 100vh;
     height: 100vh;
     position: fixed;
@@ -125,6 +128,27 @@ body {
     top: 0;
     bottom: 0;
     z-index: 1;
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: relative;
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
+    height: auto;
+    border-radius: 0 0 1.2em 1.2em;
+    flex-direction: row;
+    gap: 1vw;
+    padding: 1vw 2vw;
+  }
+  .main-content {
+    margin: 2vw;
+    max-width: 98vw;
+    padding: 3vw 2vw;
+  }
 }
 .sidebar .dropdown-btn,
 .sidebar .sidebar-action {
